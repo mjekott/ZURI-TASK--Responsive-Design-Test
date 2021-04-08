@@ -397,6 +397,7 @@ div.footer h6 {
 
   input[type='email'] {
     width: 49%;
+    margin-right:0
   }
 
   div.footer-textarea {
@@ -455,7 +456,7 @@ div.footer h6 {
 
   input[type='email'] {
     width: 100%;
-    margin-right: 0;
+    c
   }
 
   div.footer-textarea {
