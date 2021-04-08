@@ -16,11 +16,16 @@ div.nav-bar {
   padding: 1rem 6rem;
   width: 100vw;
   background: #304353;
+  position: relative;
 }
 
 div.logo {
   font-size: 1.5rem;
   color: #bcc3c7;
+}
+
+i.fa {
+  display: none;
 }
 
 ul.nav-links {
@@ -211,12 +216,6 @@ div.box1 h5 {
   font-size: 1rem;
 }
 
-@media (max-width: 700px) {
-  div.snapshot-box-content {
-    flex-direction: column;
-  }
-}
-
 div.gallery-section {
   background: #fff;
   padding: 4rem;
@@ -356,14 +355,58 @@ div.footer h6 {
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    height: 100%;
+  }
   div.nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 2rem 3rem;
+    margin-top: 0;
+  }
+
+  i.fa {
+    display: inline-block;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  ul.nav-links {
+    position: fixed;
+    background: #e44c65;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    text-align: left;
+    z-index: 2;
+    transition: 0.7s ease-in-out;
+    padding: 0;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  div.logo {
-    margin-bottom: 1rem;
+
+  ul.nav-links i.fa {
+    position: absolute;
+    top: 15px;
+    left: 30px;
   }
+  ul.nav-links li {
+    display: block;
+    margin: 4vw 0;
+    list-style: none;
+    font-size: 1.1rem;
+  }
+
+  ul.nav-links li a {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
   div.hero-section {
     padding: 4rem;
   }
@@ -390,6 +433,9 @@ div.footer h6 {
   div.hero-background-pos {
     display: none;
   }
+  div.snapshot-box-content {
+    flex-direction: column;
+  }
 
   input[type='text'] {
     width: 49%;
@@ -397,7 +443,7 @@ div.footer h6 {
 
   input[type='email'] {
     width: 49%;
-    margin-right:0
+    margin-right: 0;
   }
 
   div.footer-textarea {
@@ -410,9 +456,7 @@ div.footer h6 {
 
 @media screen and (max-width: 414px) {
   div.nav-bar {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 1rem 2rem;
   }
   div.logo {
     margin-bottom: 1rem;
@@ -443,6 +487,7 @@ div.footer h6 {
   div.hero-background-pos {
     display: none;
   }
+
   div.footer-input {
     flex-direction: column;
     width: 100%;
@@ -456,7 +501,6 @@ div.footer h6 {
 
   input[type='email'] {
     width: 100%;
-    c
   }
 
   div.footer-textarea {

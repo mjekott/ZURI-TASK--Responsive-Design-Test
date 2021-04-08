@@ -6,16 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Webpage</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div class="nav-bar">
       <div class="logo">Snapshot</div>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
+      <ul class="nav-links" id="nav-links">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <li onclick="hideMenu()"><a href="#">Home</a></li>
+        <li onclick="hideMenu()"><a href="#">About</a></li>
+        <li onclick="hideMenu()"><a href="#">Gallery</a></li>
+        <li onclick="hideMenu()"><a href="#">Contact</a></li>
       </ul>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
     </div>
 
     <!-- Hero section -->
@@ -133,5 +141,17 @@
       </div>
       <h6>Copyright &copy; 2021 Zuri Training.</h6>
     </div>
+
+    <!-- JavaScript for toggle menu -->
+    <script>
+      const navlinks = document.getElementById('nav-links');
+      function showMenu() {
+        navlinks.style.right = '0';
+      }
+
+      function hideMenu() {
+        navlinks.style.right = '-100%';
+      }
+    </script>
   </body>
 </html>
